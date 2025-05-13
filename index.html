@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <style>
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.badge-wave {
+  animation: float 3s ease-in-out infinite;
+}
+</style>
+
+<!-- Tambahkan di <head> atau sebelum penutup <body> -->
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+</head>
+<body><!-- header -->
+  <header class="bg-white" x-data="{ open: false }">
+  <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <div class="md:flex md:items-center md:gap-12">
+        <a class="block text-teal-600" href="#">
+          <span class="sr-only">Home</span>
+          <img class="h-8" src="images/Frame 33809.png" alt="Logo">
+        </a>
+      </div>
+
+      <!-- Menu tengah -->
+      <div class="hidden md:block flex-grow">
+        <nav aria-label="Global" class="flex justify-center">
+          <ul class="flex items-center gap-6 text-sm font-bold">
+            <li><a class="text-gray-500 transition hover:text-gray-500/75" href="#about">About</a></li>
+            <li><a class="text-gray-500 transition hover:text-gray-500/75" href="#projek">Projects</a></li>
+            <li><a class="text-gray-500 transition hover:text-gray-500/75" href="#blog">Blog</a></li>
+            <li><a class="text-gray-500 transition hover:text-gray-500/75" href="#footer">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Hamburger Button -->
+      <div class="block md:hidden">
+        <!-- Tombol Hamburger -->
+<button
+  id="menu-toggle"
+  class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 md:hidden"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+  </svg>
+</button>
+
+<!-- Dropdown Menu -->
+<div
+  id="mobile-menu"
+  class="hidden px-4 pb-4 md:hidden opacity-0 max-h-0 transition-all duration-500 ease-in-out overflow-hidden"
+>
+  <nav class="bg-white rounded-lg shadow-md p-4 space-y-2">
+    <a href="#about" class="block text-gray-700 font-semibold hover:text-teal-600">About</a>
+    <a href="#projek" class="block text-gray-700 font-semibold hover:text-teal-600">Projects</a>
+    <a href="#blog" class="block text-gray-700 font-semibold hover:text-teal-600">Blog</a>
+    <a href="#" class="block text-gray-700 font-semibold hover:text-teal-600">Contact</a>
+  </nav>
+</div>
+
+</header>
+
+  
+  
+    <!-- end header -->
+
+    <!-- content -->
+    <section class="relative bg-gray-100">
+      <div class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:flex lg:items-center lg:justify-between lg:px-8">
+        <!-- Text Section -->
+        <div class="max-w-xl text-left">
+          <h1 class="text-3xl font-extrabold sm:text-5xl">
+            Muhammad Rafi
+            <strong class="block font-extrabold text-teal-600">Andika</strong>
+          </h1>
+    
+          <p class="mt-4 max-w-lg sm:text-xl/relaxed">
+            My expertise is Web Development, Flutter App Development, and Tailwind CSS, along with your passion for creating innovative solutions.
+          </p>
+    
+          <div class="mt-8 flex flex-wrap gap-4 text-left">
+            <a href="https://wa.me/6282351887145" class="block w-full rounded bg-teal-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-teal-700 focus:outline-none focus:ring active:bg-teal-500 sm:w-auto">
+              contact me
+            </a>
+    
+
+          </div>
+        </div>
+    
+        <!-- Foto + Badge -->
+      <div class="relative mt-10 lg:mt-0 ">
+  <!-- Foto -->
+  <img class="rounded-lg w-94 h-auto" src="images/rafi.png" alt="Your Profile">
+
+  <!-- Badge -->
+ <div class="absolute bottom-2 right-2 bg-white/10 backdrop-blur-md border border-blue-300/20  rounded-xl p-3 text-center badge-wave">
+  <p class="text-xl font-bold">10+</p>
+  <p class="text-sm mt-1">Projects Completed</p>
+</div>
+
+</div>
+
+
+      </div>
+    </section>
+    
+  
+    <!-- end content -->
+
+    <section id="about" class="bg-white py-16">
+      <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          
+          <!-- Carousel Gambar -->
+          <div class="relative w-full max-w-xs overflow-hidden rounded-lg shadow-lg">
+            <div id="carousel" class="flex transition-transform duration-1000 ease-in-out">
+              <img src="images/idshow.jpg" alt="Photo 1" class="w-full object-cover">
+              <img src="images/gdgbogor.jpg" alt="Photo 2" class="w-full object-cover">
+              <img src="images/ngajar.jpg" alt="Photo 3" class="w-full object-cover">
+            </div>
+          </div>
+    
+          <!-- Teks About -->
+          <div>
+            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-4">About Me</h2>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Hello! I'm Muhammad Rafi Andika, a passionate developer specializing in Web Development, Flutter App Development, and Tailwind CSS. I love turning ideas into impactful digital products that people love to use.
+            </p>
+    
+            <!-- Tombol -->
+            <div class="flex gap-4">
+              <button id="readMoreBtn" class="inline-block bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold px-6 py-3 rounded-lg shadow transition">
+                Read more
+              </button>
+              <a href="cv/cv.pdf" download class="inline-block bg-gray-100 hover:bg-gray-200 text-teal-600 text-sm font-semibold px-6 py-3 rounded-lg shadow transition">
+                Download CV
+              </a>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </section>
+    
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 z-50 grid place-content-center bg-black/50 p-4 hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="w-full max-w-md rounded-lg bg-white p-6 shadow-lg">
+        <div class="flex items-start justify-between">
+          <h2 id="modalTitle" class="text-xl font-bold text-gray-900 sm:text-2xl">About Me Details</h2>
+    
+          <button id="closeModalBtn" type="button" class="-me-4 -mt-4 rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-50 hover:text-gray-600 focus:outline-none" aria-label="Close">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+    
+        <div class="mt-4">
+          <p class="text-pretty text-gray-700">
+            Hi! I’m Muhammad Rafi Andika, a junior software developer with a strong passion for building intuitive and high-performance digital products. With over 10 projects under my belt, I specialize in creating seamless experiences using modern tools and frameworks such as Tailwind CSS, Laravel, Flutter, and React.js. I take pride in crafting clean, responsive interfaces and scalable applications that cater to users’ needs.
+
+            My journey has led me to explore both front-end and back-end development, always aiming to find the perfect balance between functionality and aesthetics. I thrive in dynamic environments where I can continuously learn and grow, staying up-to-date with the latest tech innovations.
+            
+            Along the way, I’ve had the opportunity to attend seminars organized by prominent tech communities like Dicoding and GDG (Google Developer Groups), including events hosted by GDG Bogor and GDG Surabaya. These experiences have not only expanded my knowledge but have also connected me with like-minded developers and industry experts.
+            
+            Whether it’s designing beautiful UI/UX or developing powerful back-end solutions, I’m always eager to take on new challenges and contribute to impactful projects. Let’s connect and collaborate to build something great!
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+
+      const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  let isOpen = false;
+
+  menuToggle.addEventListener('click', () => {
+    isOpen = !isOpen;
+
+    if (isOpen) {
+      mobileMenu.classList.remove('hidden');
+      setTimeout(() => {
+        mobileMenu.classList.remove('opacity-0', 'max-h-0');
+        mobileMenu.classList.add('opacity-100', 'max-h-96');
+      }, 10); // delay transition
+    } else {
+      mobileMenu.classList.remove('opacity-100', 'max-h-96');
+      mobileMenu.classList.add('opacity-0', 'max-h-0');
+
+      setTimeout(() => {
+        mobileMenu.classList.add('hidden');
+      }, 500); // match duration with transition
+    }
+  });
+      // Mengambil elemen-elemen modal dan tombol
+      const modal = document.getElementById("modal");
+      const readMoreBtn = document.getElementById("readMoreBtn");
+      const closeModalBtn = document.getElementById("closeModalBtn");
+    
+      // Menampilkan modal ketika tombol "Read more" diklik
+      readMoreBtn.addEventListener("click", () => {
+        modal.classList.remove("hidden");
+      });
+    
+      // Menutup modal ketika tombol close diklik
+      closeModalBtn.addEventListener("click", () => {
+        modal.classList.add("hidden");
+      });
+  
+      const carousel = document.getElementById("carousel");
+      let index = 0;
+    
+      setInterval(() => {
+        index = (index + 1) % carousel.children.length;
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+      }, 2000); // Ganti gambar tiap 3 detik
+    </script>
+    
+    
+
+    <!-- apa -->
+    <div id="projek" class="py-10 bg-gray-100">
+      <div class=" max-w-2xl mx-auto text-center mb-10">
+        <h1 class="text-4xl font-bold">My Projek</h1>
+      </div>
+      
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        
+        <!-- Card 1 -->
+        <article class="bg-white shadow-md rounded-xl overflow-hidden transition hover:shadow-xl">
+            <img
+              src="images/iyain.png"
+              alt="Project 1"
+              class="w-full h-100 object-cover"
+            />
+            <div class="p-5">
+              <h3 class="text-xl font-semibold mb-2">Stylify – Tampil Stylish Setiap Hari</h3>
+              <p class="text-sm text-gray-600 mb-4">
+                Stylify adalah aplikasi e-commerce modern berbasis Flutter yang menghadirkan berbagai pilihan fashion terkini dan stylish dalam genggaman Anda.
+              </p>
+              <a
+                href="https://github.com/RAFIPULPIS/Ui-E-Commerce-flutter.git"
+                target="_blank"
+                class="inline-block text-teal-600 hover:underline font-medium"
+              >
+                View on GitHub →
+              </a>
+            </div>
+          </article>
+    
+        <!-- Card 2 -->
+       <article class="bg-white shadow-md rounded-xl overflow-hidden transition hover:shadow-xl">
+            <img
+              src="images/akus.png"
+              alt="Project 1"
+              class="w-full h-100 object-cover"
+            />
+            <div class="p-5">
+              <h3 class="text-xl font-semibold mb-2">Samling App – Solusi Belanja Online Modern</h3>
+              <p class="text-sm text-gray-600 mb-4">
+                Samling App adalah aplikasi e-commerce berbasis Flutter yang dirancang untuk memberikan pengalaman belanja online yang cepat, mudah, dan nyaman.  
+              </p>
+              <a
+                href="https://github.com/RAFIPULPIS/ui-onlineshop-flutter.git"
+                target="_blank"
+                class="inline-block text-teal-600 hover:underline font-medium"
+              >
+                View on GitHub →
+              </a>
+            </div>
+          </article>
+    
+        <!-- Card 3 -->
+       <article class="bg-white shadow-md rounded-xl overflow-hidden transition hover:shadow-xl">
+            <img
+              src="images/iop.png"
+              alt="Project 1"
+              class="w-full h-100 object-cover"
+            />
+            <div class="p-5">
+              <h3 class="text-xl font-semibold mb-2"> QR Scanner Tiket – Pindai Tiket dengan Mudah dan Cepat</h3>
+              <p class="text-sm text-gray-600 mb-4">
+                QR Scanner Tiket adalah aplikasi pemindai QR code yang dibangun menggunakan Flutter, dirancang khusus untuk memindai tiket acara secara cepat, akurat, dan praktis.
+              </p>
+              <a
+                href="https://github.com/RAFIPULPIS/tiketscanner-new.git"
+                target="_blank"
+                class="inline-block text-teal-600 hover:underline font-medium"
+              >
+                View on GitHub →
+              </a>
+            </div>
+          </article>
+    
+      </div>
+      <div class="mt-12 text-center">
+        <a
+          href="index2.html"
+          class="inline-block bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md transition duration-300"
+        >
+          More Projects
+        </a>
+      </div>
+      
+    </div>
+    
+    
+    
+     <!-- end apa -->
+
+
+     <!-- my blog -->
+      <div id="blog" class="py-10 bg-gray-100">
+  <div class="max-w-2xl mx-auto text-center mb-10">
+    <h1 class="text-4xl font-bold">My Blog</h1>
+  </div>
+
+  <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    
+    <!-- Blog Card 1 -->
+    <article class="bg-white shadow-md rounded-xl overflow-hidden transition hover:shadow-xl">
+      <img
+        src="images/gdg surabaya.jpg"
+        alt="Blog Post 1"
+        class="w-full h-48 object-cover"
+      />
+      <div class="p-5">
+        <h3 class="text-xl font-semibold mb-2">Menjelajah Dunia Teknologi di GDG Surabaya 2024</h3>
+        <p class="text-sm text-gray-600 mb-4">
+          Sebuah pengalaman luar biasa saat mengikuti GDG Surabaya 2024. Bertemu dengan para developer dari seluruh Indonesia, belajar tentang teknologi Google terbaru, dan terinspirasi dari sesi seputar Flutter, Firebase, dan AI.
+        </p>
+        <a
+          href="https://yourblog.com/how-to-build-a-flutter-app"
+          target="_blank"
+          class="inline-block text-teal-600 hover:underline font-medium"
+        >
+          Read More →
+        </a>
+      </div>
+    </article>
+
+    <!-- Blog Card 2 -->
+    <article class="bg-white shadow-md rounded-xl overflow-hidden transition hover:shadow-xl">
+      <img
+        src="images/ngajar.jpg"
+        alt="Blog Post 2"
+        class="w-full h-48 object-cover"
+      />
+      <div class="p-5">
+        <h3 class="text-xl font-semibold mb-2">Mengajar Tailwind CSS & Website Building di SMK Merdeka Bandung</h3>
+        <p class="text-sm text-gray-600 mb-4">
+          Berbagi pengalaman seru saat mengajar siswa-siswi SMK Merdeka Bandung tentang dasar-dasar Tailwind CSS dan membangun website yang responsive dan modern. Sebuah perjalanan yang tidak hanya mengajar, tapi juga belajar.
+        </p>
+        <a
+          href="https://yourblog.com/understanding-tailwind-css"
+          target="_blank"
+          class="inline-block text-teal-600 hover:underline font-medium"
+        >
+          Read More →
+        </a>
+      </div>
+    </article>
+
+    <!-- Blog Card 3 -->
+    <article class="bg-white shadow-md rounded-xl overflow-hidden transition hover:shadow-xl">
+      <img
+        src="images/gdgbogor.jpg"
+        alt="Blog Post 3"
+        class="w-full h-48 object-cover"
+      />
+      <div class="p-5">
+        <h3 class="text-xl font-semibold mb-2">Belajar dan Bertumbuh di GDG Bogor 2024</h3>
+        <p class="text-sm text-gray-600 mb-4">
+          Pengalaman mengikuti event GDG (Google Developer Group) Bogor 2024 yang penuh inspirasi, networking, dan insight teknologi terbaru. Dari sesi Flutter, AI, hingga cerita komunitas yang luar biasa.
+        </p>
+        <a
+          href="https://yourblog.com/getting-started-with-laravel"
+          target="_blank"
+          class="inline-block text-teal-600 hover:underline font-medium"
+        >
+          Read More →
+        </a>
+      </div>
+    </article>
+
+  </div>
+</div>
+
+      <!-- end blog -->
+
+     <!-- sertifikat -->
+     <div class="max-w-5xl mx-auto px-4 py-10">
+  <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Sertifikat Saya</h2>
+  <div id="certificate-carousel" class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+
+        <!-- Sertifikat -->
+        <li class="splide__slide">
+          <div class="bg-white rounded-2xl shadow-2xl p-4 md:p-5 transition transform hover:scale-105 duration-300 max-w-sm mx-auto">
+            <img src="images/sertifikat/dicoding.jpg" alt="Sertifikat 1" class="rounded-xl w-full h-auto max-h-60 object-contain">
+            <h3 class="text-base md:text-lg mt-4 font-semibold text-gray-700 text-center">Dicoding</h3>
+          </div>
+        </li>
+
+        <!-- Sertifikat -->
+        <li class="splide__slide">
+          <div class="bg-white rounded-2xl shadow-2xl p-4 md:p-5 transition transform hover:scale-105 duration-300 max-w-sm mx-auto">
+            <img src="images/sertifikat/flutter.jpg" alt="Sertifikat 1" class="rounded-xl w-full h-auto max-h-60 object-contain">
+            <h3 class="text-base md:text-lg mt-4 font-semibold text-gray-700 text-center">Dicoding: Navigasi Masa Depan Dengan GoRouter</h3>
+          </div>
+        </li>
+
+        <!-- Sertifikat -->
+        <li class="splide__slide">
+          <div class="bg-white rounded-2xl shadow-2xl p-4 md:p-5 transition transform hover:scale-105 duration-300 max-w-sm mx-auto">
+            <img src="images/sertifikat/Screenshot (448).png" alt="Sertifikat 1" class="rounded-xl w-full h-auto max-h-60 object-contain">
+            <h3 class="text-base md:text-lg mt-4 font-semibold text-gray-700 text-center">Great Learning: Flutter Beginner</h3>
+          </div>
+        </li>
+
+        <!-- Sertifikat -->
+        <li class="splide__slide">
+          <div class="bg-white rounded-2xl shadow-2xl p-4 md:p-5 transition transform hover:scale-105 duration-300 max-w-sm mx-auto">
+            <img src="images/sertifikat/gdgbogor.jpg" alt="Sertifikat 1" class="rounded-xl w-full h-auto max-h-60 object-contain">
+            <h3 class="text-base md:text-lg mt-4 font-semibold text-gray-700 text-center">GDG Bogor</h3>
+          </div>
+        </li>
+
+        <!-- Sertifikat -->
+        <li class="splide__slide">
+          <div class="bg-white rounded-2xl shadow-2xl p-4 md:p-5 transition transform hover:scale-105 duration-300 max-w-sm mx-auto">
+            <img src="images/sertifikat/idshow.jpg" alt="Sertifikat 2" class="rounded-xl w-full h-auto max-h-60 object-contain">
+            <h3 class="text-base md:text-lg mt-4 font-semibold text-gray-700 text-center">ID Camp  Connect Roadshow</h3>
+          </div>
+        </li>
+
+        <!-- Sertifikat -->
+        <li class="splide__slide">
+          <div class="bg-white rounded-2xl shadow-2xl p-4 md:p-5 transition transform hover:scale-105 duration-300 max-w-sm mx-auto">
+            <img src="images/sertifikat/ui10besar.jpg" alt="Sertifikat 3" class="rounded-xl w-full h-auto max-h-60 object-contain">
+            <h3 class="text-base md:text-lg mt-4 font-semibold text-gray-700 text-center">SiteFest UI 10 Besar</h3>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+     <!-- end sertifikat -->
+
+
+      <!-- skiill -->
+      <section class="bg-teal-700 text-white py-12">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-4">My Skills</h2>
+          <p class="text-gray-400 mb-8">
+            My expertise includes several programming languages, namely
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Skill PHP -->
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>Tailwind Css</span>
+                <span>90%</span>
+              </div>
+              <div class="w-full bg-gray-700 h-2 rounded">
+                <div class="bg-yellow-500 h-2 rounded" style="width: 90%;"></div>
+              </div>
+            </div>
+            <!-- Skill jQuery -->
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>flutter</span>
+                <span>70%</span>
+              </div>
+              <div class="w-full bg-gray-700 h-2 rounded">
+                <div class="bg-yellow-500 h-2 rounded" style="width: 70%;"></div>
+              </div>
+            </div>
+            <!-- Skill HTML5 -->
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>HTML</span>
+                <span>95%</span>
+              </div>
+              <div class="w-full bg-gray-700 h-2 rounded">
+                <div class="bg-yellow-500 h-2 rounded" style="width: 95%;"></div>
+              </div>
+            </div>
+            <!-- Skill CSS3 -->
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>CSS</span>
+                <span>90%</span>
+              </div>
+              <div class="w-full bg-gray-700 h-2 rounded">
+                <div class="bg-yellow-500 h-2 rounded" style="width: 90%;"></div>
+              </div>
+            </div>
+            <!-- Skill WordPress -->
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>Laravel</span>
+                <span>70%</span>
+              </div>
+              <div class="w-full bg-gray-700 h-2 rounded">
+                <div class="bg-yellow-500 h-2 rounded" style="width: 70%;"></div>
+              </div>
+            </div>
+            <!-- Skill SEO -->
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>Dart</span>
+                <span>80%</span>
+              </div>
+              <div class="w-full bg-gray-700 h-2 rounded">
+                <div class="bg-yellow-500 h-2 rounded" style="width: 80%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>MySQL/SQLite </span>
+                <span>70%</span>
+              </div>
+              <div class="w-full bg-gray-700 h-2 rounded">
+                <div class="bg-yellow-500 h-2 rounded" style="width: 70%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>Javascript</span>
+                <span>50%</span>
+              </div>
+              <div class="w-full bg-gray-700 h-2 rounded">
+                <div class="bg-yellow-500 h-2 rounded" style="width: 50%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </section>
+      
+      
+       <!-- end skill -->
+
+       <!-- contact -->
+      <!-- footer -->
+       <footer id="footer" class="bg-teal-600 text-white py-10">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Logo & About -->
+      <div>
+        <h3 class="text-xl font-bold">Rafi Andika</h3>
+        <p class="mt-4 text-white/90">
+          Web Developer & Mobile App Enthusiast. Passionate about Laravel, Flutter, Tailwind CSS, and building impactful digital products.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h3 class="text-lg font-semibold">Navigation</h3>
+        <ul class="mt-4 space-y-2">
+          <li><a href="#home" class="hover:text-gray-200 transition">home</a></li>
+          <li><a href="#about" class="hover:text-gray-200 transition">About</a></li>
+          <li><a href="#projek" class="hover:text-gray-200 transition">Projects</a></li>
+          <li><a href="#contact" class="hover:text-gray-200 transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-lg font-semibold">Contact</h3>
+        <ul class="mt-4 space-y-2 text-white/90">
+          <li>Email: <a href="mailto:rafiidnsolo@gmail.com" class="underline hover:text-white">rafiidnsolo@gmail.com</a></li>
+          <li>Location: Pulang Pisau, Kalimantan Tengah</li>
+        </ul>
+        <div class="flex space-x-4 mt-4">
+          <a href="https://github.com/rafiandika" target="_blank" class="hover:text-gray-200 transition">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 ..."></path> <!-- Potong untuk singkat -->
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/rafiandika" target="_blank" class="hover:text-gray-200 transition">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+              <path d="M4.98 3.5C4.98 2.12 6.1 1 ..." /> <!-- Potong untuk singkat -->
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="mt-10 border-t border-white/30 pt-4 text-center">
+      <p class="text-sm text-white/90">© 2024 Muhammad Rafi Andika. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+    
+                  <!--skill -->
+                  <!-- end skill -->
+
+                  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Splide('#certificate-carousel', {
+      type    : 'loop',
+      perPage : 1,
+      gap     : '1rem',
+      autoplay: true,
+      pauseOnHover: true,
+      pagination: true,
+      arrows: true,
+      breakpoints: {
+        768: {
+          perPage: 1,
+        },
+        1024: {
+          perPage: 2,
+        }
+      }
+    }).mount();
+  });
+</script>
+
+
+    
+
+
+
+      
+        
+</body>
+</html>
